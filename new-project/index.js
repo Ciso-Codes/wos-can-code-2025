@@ -8,7 +8,16 @@ log(chalk.blue('Hello') + ' World' + chalk.red('!'));
 
 const rl = readline.createInterface({ input, output });
 
-const reply = await rl.question('What is your name? ');
-console.log(`Hello, ${reply}!`);
+let answer;
+
+do {
+  const reply = await rl.question('What is your name? ');
+  console.log(`Hello, ${reply}!`);
+
+  answer = await rl.question('Would you like to change your name? (Y/n):');
+  if (answer !== undefined || answer !== null) {
+    answer = answer.toLowerCase();
+  }
+} while (answer === 'y');
 
 rl.close();
