@@ -1,0 +1,12 @@
+[
+  {
+    "id": 101,
+    "name": "Alpha",
+    "active": true
+  },
+  {
+    "id": 102,
+    "name": "Beta",
+    "active": false
+  }
+]
