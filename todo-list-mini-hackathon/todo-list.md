@@ -45,7 +45,7 @@ MENU
 4: Delete task
 5: Exit
 
-Please choose an option (1-4): 1
+Please choose an option (1-5): 1
 
 You have no tasks.
 
@@ -56,7 +56,7 @@ MENU
 4: Delete task
 5: Exit
 
-Please choose an option (1-4): 2
+Please choose an option (1-5): 2
 
 Enter new task: Clean room
 Add another task? (Y/n): Y
@@ -72,7 +72,7 @@ MENU
 4: Delete task
 5: Exit
 
-Please choose an option (1-4): 1
+Please choose an option (1-5): 1
 
 TO-DO
 [1]: [ ] Clean room
@@ -86,7 +86,7 @@ MENU
 4: Delete task
 5: Exit
 
-Please choose an option (1-4): 3
+Please choose an option (1-5): 3
 
 Which task is complete? 2
 
@@ -102,7 +102,7 @@ MENU
 4: Delete task
 5: Exit
 
-Please choose an option (1-4): 4
+Please choose an option (1-5): 4
 
 Which task would you like to delete: 1
 Delete "Clean room" task? (Y/n): Y
@@ -118,7 +118,7 @@ MENU
 4: Delete task
 5: Exit
 
-Please choose an option (1-4): 5
+Please choose an option (1-5): 5
 Goodbye
 ```
 
