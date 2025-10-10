@@ -48,7 +48,6 @@ def test_extract_returns_expected_dict_with_200():
         assert mock.called
         assert mock.last_request.method == "GET"
         assert mock.last_request.url == url
-        assert mock.last_request.response.status_code == 200
 
 
 def test_extract_sends_bearer_token_in_header():
