@@ -1,4 +1,17 @@
 /**
+ *
+ * @param {number} n
+ * @returns {number}
+ */
+function sumOfSquares(n) {
+  let num = Math.abs(n);
+  return num
+    .toString()
+    .split('')
+    .reduce((sum, digit) => sum + Math.pow(Number(digit), 2), 0);
+}
+
+/**
  * Determines whether a number is happy.
  *
  * A happy number eventually reaches 1 when repeatedly replaced by the
@@ -11,24 +24,30 @@
  * @returns {boolean}
  */
 function isHappy(n) {
-  // TODO: Determine if n is a happy number
-  // 1) Create a helper to compute sum of squares of digits
-  // 2) Initialize a Set for seen numbers
-  // 3) While n is not 1:
-  //      - Replace n with sum of squares of its digits
-  //      - If n already in seen → return false
-  //      - Add n to seen
-  // 4) Return true if loop exits because n == 1
+  const seen = new Set();
+  while (n != 1) {
+    n = sumOfSquares(n);
+    if (seen.has(n)) {
+      return false;
+    }
+    seen.add(n);
+  }
+  return true;
 }
 
+/**
+ * Determines whether a number is happy using Floyd's cycle detection.
+ * @param {number} n - positive integer
+ * @returns {boolean}
+ */
 function isHappyFloyd(n) {
-  // TODO: Determine if n is a happy number using Floyd’s Cycle Detection
-  // 1) Define a helper function sumOfSquares(num)
-  // 2) Initialize slow = n and fast = sumOfSquares(n)
-  // 3) While fast != 1 and slow != fast:
-  //      - slow = sumOfSquares(slow)
-  //      - fast = sumOfSquares(sumOfSquares(fast))
-  // 4) Return true if fast == 1; otherwise, false
+  let tortoise = n;
+  let hare = sumOfSquares(n);
+  while (hare != 1 && tortoise != hare) {
+    tortoise = sumOfSquares(tortoise);
+    hare = sumOfSquares(sumOfSquares(hare));
+  }
+  return hare === 1;
 }
 
 export { isHappy, isHappyFloyd };
